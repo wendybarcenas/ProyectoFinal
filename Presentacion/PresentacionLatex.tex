@@ -1,0 +1,190 @@
+% Author: Equipo 4 
+% Waves Lab
+
+ 
+\documentclass{beamer}
+\setbeamertemplate{navigation symbols}{}
+\usepackage[utf8]{inputenc}
+\usepackage{beamerthemeshadow}
+\usepackage{listings}
+\usepackage{hyperref}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue!50!red,
+  urlcolor=green!70!black
+}
+
+\begin{document}
+\title{ITESM}  
+\subtitle{Proyecto Final\\Ecuaciones diferenciales en reacciones químicas
+}
+\author{
+	\author{Equipo 4}
+		Estrella de Alhely Hdz Mérida A01174160\\
+		Dimani Guadalupe Tlelo Reyes A01731786\\
+		Edgar Cano Cruz A01731282\\
+		José Alberto Loranca Tapia A01328448\\
+		Wendy Catherine Bárcenas Rodríguez A01423727\\
+}
+\date{\today} 
+
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}\frametitle{Table of contents}
+\tableofcontents
+\end{frame} 
+
+
+\section{Objetivo }
+
+\begin{frame}
+	\textbf{Objetivo}
+	\begin{enumerate}
+		\item
+	    	Definir la utilidad de los métodos numéricos para la Ingeniería en Biotecnología o bien para aplicaciones en la Ingeniería Química, enfocado en el área de los procesos químicos y las reacciones químicas y estequiometría de los productos producidos en un proceso químico de laboratorio.
+	\end{enumerate} 
+\end{frame}
+
+
+\section{Introducción }
+
+\begin{frame}
+	\textbf{Introducción}
+	\begin{enumerate}
+		\item
+			Los modelos de aproximación matemática son utilizados no solo en el mundo de la ingeniería, si no en todo proceso en donde los números, cifras o cantidades jueguen un papel importante. Es por ello que la finalidad de los análisis numéricos es hallar soluciones aproximadas o cercanas a la incertidumbre de ciertos problemas complejos que se puedan resolver de manera ingeniosa y simple con cálculos aritméticos.
+	\end{enumerate} 
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.105]{picint.png}
+		\label{fig: Figura 1}
+	\end{figure}
+\end{frame}
+
+\begin{frame}
+	\textbf{Introducción}
+	\begin{enumerate}
+		\item
+			La investigación y el desarrollo de la ingeniería química se basan en el análisis y en la utilización de las interacciones físico-químicas. En este contexto, la modelización matemática  permiten concentrar las investigaciones experimentales en aspectos bien definidos, descubrir relaciones complejas a través de la interacción entre el experimento y la simulación numérica, y explotarlas comercialmente 
+	\end{enumerate}
+	\end{enumerate} 
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.1]{picint1.png}
+		\label{fig: Figura 2}
+	\end{figure} 
+\end{frame}
+
+\section{Descripción del problema a resolver }
+
+\begin{frame}
+	\textbf{Descripción del problema a resolver}
+	\begin{enumerate}
+		\item
+			Un reactor químico contiene dos tipos de moléculas (sustancias), A y B que van a reaccionar para formar un producto. Cuando una molécula de A y B chocan una contra otra, se convierte en A.
+		
+		A+ B 2A
+
+		\item
+			A medida que avanza la reacción, todo B se convierte en A. ¿Cuánto tiempo lleva esto?
+	\end{enumerate} 
+	\end{enumerate} 
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.1]{picdescprobl.png}
+		\label{fig: Figura3}
+	\end{figure}
+\end{frame}
+
+\begin{frame}
+	\begin{enumerate}
+		\item
+			El número total de moléculas (A y B) permanece constante. Llamamos $x(t)$ la fracción de todas las moléculas que en el tiempo t son de tipo A: $x(t)=A/A+B$
+				
+		\item
+			Entonces 0 mayor que $x(t)$ mayor que 1, y la fracción de todas las moléculas en el reactor que (en el momento t) son de tipo B es $1-x(t)$. Cada vez que tiene lugar una reacción, la relación $x(t)$ aumenta, por lo que: $dx/dt$ es proporcional a la velocidad de reacción.
+				
+		\item
+			En química, K es una constante de proporcionalidad, que depende del particular tipo de moléculas A y B en esta reacción y, para este problema se asumirá que $K=1$. Así pues:
+
+	\end{enumerate} 
+	\logoincludegraphics[scale=0.8]{picdescfor.png}
+\end{frame}
+
+\section{Resultados }
+
+\begin{frame}
+	\textbf{Resultados}
+	\begin{enumerate}
+		\item
+			En el \textbf{Método de Euler} el presente proyecto se tiene la ecuación $y'=x(1-x)$, el valor de x0 es igual a 0, mientras que x1 es igual a 3. Además se hicieron dos cálculos diferentes, el primero utilizando 20 segmentos y el segundo con 100 segmentos, dando un valor de “h” de 0.15 y 0.03 respectivamente. Se graficó la solución analitica de $y=x^2/2 - x^3/3$, la cual coincidió con la sucesión de puntos generada.		
+	\end{enumerate} 
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.8]{euler1.png}
+		\label{fig: Figura4}
+	\end{figure}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.8]{euler2.png}
+		\label{fig: Figura5}
+	\end{figure}
+\end{frame}
+
+\begin{frame}
+	\textbf{Heun}
+	\begin{enumerate}
+		\item
+			Para este método numérico se utilizó la ecuación diferencial $y'=x(1-x)$, y el valor de x0 es igual a 0, mientras que x1 es igual a 3. Mientras que el número de segmentos fue de 10, esto debido a que se trata de un método más preciso. Por otro lado, el valor calculado de “h” fue de 0.3 y se graficó la solución analitica de $y=x^2/2 - x^3/3$
+	\end{enumerate} 
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.1]{heun.png}
+		\label{fig: Figura6}
+	\end{figure}
+\end{frame}
+
+\begin{frame}
+	\textbf{Runge Kutta 4}
+	\begin{enumerate}
+		\item
+Para este método numérico se utilizó la ecuación diferencial $y'=x(1-x)$ y valores de $x0=0$, $y0=0$, y x1=3. Además, el número de segmentos fue de 20 dando así h=0.15. De esta forma se graficó la solución analitica, $y=x^2/2 - x^3/3$, la cual coincidió perfectamente con la sucesión de puntos calculada, dando así un resultado exitoso y preciso.
+	\end{enumerate} 
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.1]{runge.png}
+		\label{fig: Figura3}
+	\end{figure}
+\end{frame}
+
+\section{Conclusiones }
+
+\begin{frame}
+	\textbf{Conclusiones}
+	\begin{enumerate}
+		\item
+			Con base en los resultados obtenidos y lo aprendido en estos últimos temas vistos en clase podemos decir que la mayoría de ecuaciones diferenciales se pueden simular y aproximar usando métodos numéricos. Además de que dado los resultados dados, podemos afirmar que uno de los métodos más sencillos de aproximar una solución a una ecuación diferencial es el de Euler. 
+	\end{enumerate} 
+\end{frame}
+
+\section{Bibliografía }
+
+\begin{frame}
+	\textbf{Bibliografía}
+	\begin{enumerate}
+		\item
+			Gómez, M. (2019). Métodos numéricos. Universidad Autónoma Metropolitana.
+		\item
+			Mayers, D. (2003). Introducción al análisis numérico , Cambridge University Press.
+		\item
+			Mushtaq, F. (2012). Analysis and Validation of Chemical Reactors performance models developed in a commercial software platform. noviembre 6, 2020, de KTH School of Industrial Engineering and Management
+		\item
+			Raymond, P. (1988). Métodos numéricos para ingenieros. McGraw Hill.
+	\end{enumerate} 
+\end{frame}
+
+\end{document}
