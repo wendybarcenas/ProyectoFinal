@@ -1,6 +1,6 @@
 clear all;
 clc;
-f=@(x,y) 3*x^2; %Write your f(x,y) function, where dy/dx=f(x,y),x(x0)=y0.
+f=@(x,y) x*(1-x); %Write your f(x,y) function, where dy/dx=f(x,y),x(x0)=y0.
 a=0; %inicio de simulacion
 b=3; %fin de simulacion
 yinit=0; %conducion inicial
