@@ -1,0 +1,172 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{natbib}
+\usepackage{graphicx}
+\usepackage[spanish]{babel}
+\usepackage{amsmath, amsthm, amssymb}
+\usepackage{gensymb}
+\usepackage{lineno}
+\begin{document}
+\begin{titlepage}
+
+\title{Proyecto final: Ecuaciones diferenciales en reacciones químicas}
+\author{Equipo 4: \\
+\\Estrella de Alhely Hdz Mérida A01174160 
+\\Edgar Cano Cruz A01731282
+\\José Alberto Loranca Tapia A01328448
+\\Wendy Catherine Bárcenas Rodríguez A01423727
+\\Dimani Guadalupe Reyes Tlelo A01731786
+\\ \\Métodos numéricos en Ingeniería
+\\ \\ Profesor: Dr. Adolfo Centreno Tellez
+ }
+\date{7 de diciembre de 2020}
+\end{titlepage}
+\begin{figure}[t!]
+\centering
+\includegraphics[scale=0.2]{PFM- 1.png}
+\end{figure}
+\maketitle
+\newpage
+
+
+
+\section{Objetivo}
+El objetivo del presente proyecto se trata de definir la utilidad de los métodos numéricos para la Ingeniería en Biotecnología o bien para aplicaciones en la Ingeniería Química, enfocado en el área de los procesos químicos y las reacciones químicas y estequiometría de los productos producidos en un proceso químico de laboratorio. De igual forma, se podrá definir la trascendencia del empleo de los métodos numéricos y se reconocerá los modelos matemáticos que posibilitan la estimación de un resultado o la aproximación al mismo, de esta manera, se podrá conseguir la resolución de una incógnita aplicada a la Biotecnología.
+
+
+
+\section{Introducción}
+ Los métodos numéricos son técnicas para aproximar procedimientos matemáticos de gran relevancia en la ingeniería, ya que sin estas aproximaciones no es posible resolver el procedimiento analíticamente o bien, el método analítico es intratable.
+Si bien, existen múltiples métodos que forman parte de esta rama de la ingeniería que han sido de gran utilidad en las ciencias para la resolución de problemas o de igual manera, para el estudio detallado y concreto de determinadas variables que forman parte de sistemas o materia en estudio. Ahora bien, los modelos de aproximación matemática son utilizados no solo en el mundo de la ingeniería, si no en todo proceso en donde los números, cifras o cantidades jueguen un papel importante. Es por ello que la finalidad de los análisis numéricos es hallar soluciones aproximadas o cercanas a la incertidumbre de ciertos problemas complejos que se puedan resolver de manera ingeniosa y simple con cálculos aritméticos (Raymond, P. 1988). 
+
+Por otro lado, la investigación y el desarrollo de la ingeniería química se basan en el análisis y en la utilización de las interacciones físico-químicas. En este contexto, la modelización matemática de estas interacciones y su simulación numérica siguen adquiriendo una importancia creciente; permiten concentrar las investigaciones experimentales en aspectos bien definidos, descubrir relaciones complejas a través de la interacción entre el experimento y la simulación numérica, y explotarlas comercialmente (Dieterich, Sorescu, & Eigenberger 1994).
+
+
+
+\section{Descripción del problema}
+Los balances de materia y energía para los sistemas de procesos químicos y especialmente en los reactores químicos son los más importantes en el diseño de plantas, en las que la elección del reactor y sus parámetros de diseño son aspectos cruciales para desarrollar un producto sostenible y el desarrollo y optimización de procesos (Mushtaq, 2012).
+En este ejemplo, un reactor químico contiene dos tipos de moléculas (sustancias), A y B que van a reaccionar para formar un producto. Cuando una molécula de A y B chocan una contra otra, se convierte en A.
+
+
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=.7]{PMF 2.png}
+\end{figure}
+\\
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=.7]{PMF 3.png}
+\end{figure}
+\\
+A medida que avanza la reacción, todo B se convierte en A. ¿Cuánto tiempo lleva esto?
+El número total de moléculas (A y B) permanece constante.
+Llamamos x (t) la fracción de todas las moléculas que en el tiempo t son de tipo A:
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=.7]{PMF 4.png}
+\end{figure}
+\\
+
+Entonces $0 \leq x(t) \leq 1$, y la fracción de todas las moléculas en el reactor que (en el momento t) son de tipo B es 1-x(t). Cada vez que tiene lugar una reacción, la relación x (t) aumenta, por lo que:
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=.7]{PMF 5.png}
+\end{figure}
+\\
+
+En química, K es una constante de proporcionalidad, que depende del particular tipo de moléculas A y B en esta reacción y, para este problema se asumirá que K=1. Así pues:
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=.7]{PMF 6.png}
+\end{figure}
+\\
+
+\section{Resultados}
+
+Método de Euler
+\\
+\\
+El método de Euler es ideal para usar computadoras para obtener una solución numérica, ya que discretiza la variable independiente, pues las computadoras solo comprenden las variables discretas. Este método transforma una ecuación diferencial de una ecuación diferencial ordinaria a una ecuación algebraica, por lo tanto, la solución de un problema de valor inicial es simplemente un procedimiento que produce soluciones aproximadas en puntos particulares usando sólo las operaciones de suma, resta, multiplicación, división y evaluaciones funcionales (Biswas, Chatterjee, Mukherjee & Pal, 2013).
+El método de Euler consiste en encontrar iterativamente la solución de una ecuación diferencial de primer orden y valores iniciales conocidos para un rango de valores. Partiendo de un valor inicial x0 y avanzando con un paso h, se pueden obtener los valores de la soluci´on de la siguiente manera:
+
+ 
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=.6]{PMF 7.png}
+\end{figure}
+\\
+
+Una de las técnicas más simples para aproximar soluciones de una ecuación diferencial es el método de Euler, o de las rectas tangentes. En el presente proyecto se tiene la ecuación y'=x(1-x), el valor de x0 es igual a 0, mientras que x1 es igual a 3. Además se hicieron dos cálculos diferentes, el primero utilizando 20 segmentos y el segundo con 100 segmentos, dando un valor de “h” de 0.15 y 0.03 respectivamente. Se graficó la solución analitica de $y=x^2/2 - x^3/3$, la cual coincidió con la sucesión de puntos generada, dando así un resultado exitoso debido a que el objetivo de el método de Euler es calcular una sucesión de puntos que se encuentren cercanos a los puntos de la solución analítica.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=.5]{PMF 8.png}
+\end{figure}
+\\
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=.4]{PMF 9.png}
+\end{figure}
+\\
+\\
+Método de Heun
+\\
+\\
+El método de Heun puede referirse al método de Euler mejorado o modificado (es decir, la regla trapezoidal explícita), o un método similar de Runge-Kutta de dos etapas. Lleva el nombre de Karl Heun y es un procedimiento numérico para resolver ecuaciones diferenciales ordinarias (EDO) con un valor inicial dado. Ambas variantes pueden verse como extensiones del método de Euler en métodos de Runge-Kutta de segundo orden de dos etapas (Mayers, D. 2003).
+Se dice que el método de Heun es un método implícito. Esto significa que, en cada paso, está definido en función de si mismo. De igual forma, para este método numérico se utilizó la ecuación diferencial y'=x(1-x), y el valor de x0 es igual a 0, mientras que x1 es igual a 3. Mientras que el número de segmentos fue de 10, esto debido a que se trata de un método más preciso. Por otro lado, el valor calculado de “h” fue de 0.3 y se graficó la solución analitica de $y=x^2/2 - x^3/3$, la cual coincidió con la sucesión de puntos generada, dando así un resultado exitoso.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=.4]{PMF 10.png}
+\end{figure}
+\\
+\newpage
+
+Método de Runge Kutta 4
+\\
+\\
+El método Runge-Kutta de orden 4 es la forma de los métodos de Runge-Kutta de uso más común y así mismo más exacto para obtener soluciones aproximadas de ecuaciones diferenciales. La solución que ofrece este método, es una tabla de la función solución, con valores de “y” correspondientes a valores específicos de “x”.
+Es por esto que uno de los requisitos para este método es especificar el intervalo de x. También se requiere de una ecuación diferencial de primer orden y de la condición inicial, es decir, el valor de “y” en un punto conocido x0 (Gómez, M. 2019). Para este método numérico se utilizó la ecuación diferencial y'=x(1-x) y valores de x0=0, y0=0, y x1=3. Además, el número de segmentos fue de 20 dando así h=0.15. De esta forma se graficó la solución analitica, $y=x^2/2 - x^3/3$, la cual coincidió perfectamente con la sucesión de puntos calculada, dando así un resultado exitoso y preciso. Finalmente, el código de Matlab comprobó que los datos obtenidos son correctos.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=.5]{PMF 11.png}
+\end{figure}
+
+\newpage
+
+
+
+
+ \section{Conclusión}
+
+Con base en los resultados obtenidos y lo aprendido en estos últimos temas vistos en clase podemos decir que la mayoría de ecuaciones diferenciales se pueden simular y aproximar usando métodos numéricos. Además de que dado los resultados dados, podemos afirmar que uno de los métodos más sencillos de aproximar una solución a una ecuación diferencial es el de Euler. El método Heun conocido como “Euler mejorado” nos da un cálculo más preciso de la pendiente ya que toma un punto inicial y uno final para cada intervalo. El método Runge-Kutta nos ha servido para aproximar soluciones de ecuaciones diferenciales ordinarias, particularmente de este problema de valor inicial : y'=x(1-x).
+
+ \section{Bibliografía}
+ 
+ Biswas, B., Chatterjee, S., Mukherjee, S & Pal, S. (2013). A DISCUSSION ON EULER METHOD: A REVIEW. Electronic Journal of Mathematical Analysis and Applications. 1. 294-317.  \\
+ 
+ 
+Dieterich, E., Sorescu, E. & Eigenberger. G. (1994). Numerical methods for the simulation of chemical engineering processes. American Institute of Chemical Engineers. 34, 445-468.\\
+
+
+Gómez, M. (2019). Métodos numéricos. Universidad Autónoma Metropolitana. http://test.cua.uam.mx/MN/Methods/EcDiferenciales/Runge-Kutta/ RungeKutta\\
+
+
+Mayers, D. (2003). Introducción al análisis numérico , Cambridge University Press.\\
+
+Mushtaq, F. (2012). Analysis and Validation of Chemical Reactors performance models developed in a commercial software platform. noviembre 6, 2020, de KTH School of Industrial Engineering and Management Sitio web: https://www.diva-portal.org/smash/get/diva2:726698/ATTACHMENT01.pdf\\
+
+
+Raymond, P. (1988). Métodos numéricos para ingenieros. McGraw Hill. \\
+http://148.206.53.233/tesiuami/Libros/L34.pdf
+
+
+
+\end{document}
